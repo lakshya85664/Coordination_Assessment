@@ -1,0 +1,140 @@
+{
+  "step_count": 13,
+  "max_steps": 20,
+  "max_concurrency": 2,
+  "events": [
+    {
+      "step": 1,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_a",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 2,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_b",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 3,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_c",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_a",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_b",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_c",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "ready_set_computed",
+      "details": {
+        "ready_tasks": [
+          "task_a",
+          "task_b",
+          "task_c"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_a",
+        "running_count": 1,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 6,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_b",
+        "running_count": 2,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 7,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_a",
+        "result": "Task A completed successfully."
+      }
+    },
+    {
+      "step": 8,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_b",
+        "result": "Task B completed successfully."
+      }
+    },
+    {
+      "step": 9,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_c",
+        "running_count": 1,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 10,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_c",
+        "result": "Task C completed successfully."
+      }
+    },
+    {
+      "step": 11,
+      "event": "join_computed",
+      "details": {
+        "overall_status": "completed",
+        "total_tasks": 3,
+        "successful_tasks": [
+          "task_a",
+          "task_b",
+          "task_c"
+        ],
+        "failed_tasks": [],
+        "blocked_tasks": [],
+        "cancelled_tasks": [],
+        "pending_tasks": [],
+        "ready_tasks": [],
+        "running_tasks": [],
+        "completed_count": 3,
+        "failure_count": 0,
+        "terminal_count": 3,
+        "all_tasks_completed": true
+      }
+    }
+  ]
+}

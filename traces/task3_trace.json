@@ -1,0 +1,188 @@
+{
+  "step_count": 18,
+  "max_steps": 20,
+  "max_concurrency": 2,
+  "events": [
+    {
+      "step": 1,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_a",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 2,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_b",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 3,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_c",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_a",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_b",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_c",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "ready_set_computed",
+      "details": {
+        "ready_tasks": [
+          "task_a",
+          "task_b",
+          "task_c"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_a",
+        "running_count": 1,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 6,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_b",
+        "running_count": 2,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 7,
+      "event": "running_tasks_read",
+      "details": {
+        "running_tasks": [
+          "task_a",
+          "task_b"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "event": "concurrency_slots_read",
+      "details": {
+        "max_concurrency": 2,
+        "running_count": 2,
+        "available_slots": 0
+      }
+    },
+    {
+      "step": 9,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_a",
+        "result": "Task A completed successfully."
+      }
+    },
+    {
+      "step": 10,
+      "event": "running_tasks_read",
+      "details": {
+        "running_tasks": [
+          "task_b"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "event": "concurrency_slots_read",
+      "details": {
+        "max_concurrency": 2,
+        "running_count": 1,
+        "available_slots": 1
+      }
+    },
+    {
+      "step": 12,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_c",
+        "running_count": 2,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 13,
+      "event": "running_tasks_read",
+      "details": {
+        "running_tasks": [
+          "task_b",
+          "task_c"
+        ]
+      }
+    },
+    {
+      "step": 14,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_b",
+        "result": "Task B completed successfully."
+      }
+    },
+    {
+      "step": 15,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_c",
+        "result": "Task C completed successfully."
+      }
+    },
+    {
+      "step": 16,
+      "event": "task_lookup",
+      "details": {
+        "task_id": "task_a",
+        "status": "success"
+      }
+    },
+    {
+      "step": 17,
+      "event": "task_lookup",
+      "details": {
+        "task_id": "task_b",
+        "status": "success"
+      }
+    },
+    {
+      "step": 18,
+      "event": "task_lookup",
+      "details": {
+        "task_id": "task_c",
+        "status": "success"
+      }
+    }
+  ]
+}

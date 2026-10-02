@@ -1,0 +1,162 @@
+{
+  "step_count": 12,
+  "max_steps": 20,
+  "max_concurrency": 2,
+  "events": [
+    {
+      "step": 1,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_a",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 2,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_b",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 3,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_c",
+        "depends_on": [
+          "task_a",
+          "task_b"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_a",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_b",
+        "dependencies": []
+      }
+    },
+    {
+      "step": 4,
+      "event": "ready_set_computed",
+      "details": {
+        "ready_tasks": [
+          "task_a",
+          "task_b"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_a",
+        "running_count": 1,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 6,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_b",
+        "running_count": 2,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 7,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_a",
+        "result": "Task A completed."
+      }
+    },
+    {
+      "step": 8,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_b",
+        "result": "Task B completed."
+      }
+    },
+    {
+      "step": 9,
+      "event": "task_ready",
+      "details": {
+        "task_id": "task_c",
+        "dependencies": [
+          "task_a",
+          "task_b"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "event": "ready_set_computed",
+      "details": {
+        "ready_tasks": [
+          "task_c"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "event": "task_started",
+      "details": {
+        "task_id": "task_c",
+        "running_count": 1,
+        "max_concurrency": 2
+      }
+    },
+    {
+      "step": 11,
+      "event": "task_succeeded",
+      "details": {
+        "task_id": "task_c",
+        "result": "Task C completed."
+      }
+    },
+    {
+      "step": 12,
+      "event": "coordination_metrics_computed",
+      "details": {
+        "total_tasks": 3,
+        "status_counts": {
+          "pending": 0,
+          "ready": 0,
+          "running": 0,
+          "success": 3,
+          "failed": 0,
+          "blocked": 0,
+          "cancelled": 0
+        },
+        "successful_count": 3,
+        "failed_count": 0,
+        "blocked_count": 0,
+        "cancelled_count": 0,
+        "running_count": 0,
+        "terminal_count": 3,
+        "completion_rate": 1.0,
+        "failure_rate": 0.0,
+        "overall_status": "completed",
+        "max_concurrency": 2,
+        "available_slots": 2,
+        "step_count": 12,
+        "max_steps": 20,
+        "step_utilization": 0.6,
+        "trace_event_count": 14
+      }
+    }
+  ]
+}

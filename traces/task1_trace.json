@@ -1,0 +1,62 @@
+{
+  "step_count": 6,
+  "max_steps": 20,
+  "max_concurrency": 2,
+  "events": [
+    {
+      "step": 1,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_a",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 2,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_b",
+        "depends_on": []
+      }
+    },
+    {
+      "step": 3,
+      "event": "task_added",
+      "details": {
+        "task_id": "task_c",
+        "depends_on": [
+          "task_a",
+          "task_b"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "event": "dependencies_validated",
+      "details": {
+        "task_count": 3
+      }
+    },
+    {
+      "step": 5,
+      "event": "cycle_checked",
+      "details": {
+        "has_cycle": false
+      }
+    },
+    {
+      "step": 6,
+      "event": "dependency_graph_read",
+      "details": {
+        "graph": {
+          "task_a": [],
+          "task_b": [],
+          "task_c": [
+            "task_a",
+            "task_b"
+          ]
+        }
+      }
+    }
+  ]
+}
